@@ -9,15 +9,33 @@
 
     <link href="css/starter-template.css" rel="stylesheet">
 
+    <script language="JavaScript" src="code.js"></script>
+
     
 
    
 
     
     <title>Trabalho Web</title>
+    <script type="text/javascript">
+      var nome = document.getElementById("value");
+ var disciplina = document.getElementById("value");
+ var n1 = document.getElementById("value");
+ var n2 = document.getElementById("value");
+ var resultado = document.getElementById("value");
+  
 
-    
+         
+         
+         resultado.value = calculoMedia(n1,n2);
 
+         function calculoMedia(n1,n2){
+       var media;
+       media = (n1*1)+(n2*9)/10);
+       
+   	   return media;
+         }
+         </script>
   </head>
   <body style="background-color:	#000000">
 
@@ -39,10 +57,10 @@
                   <li class="nav-item dropdown">
                     <a style="color:#ffffff;" class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Questões</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                      <a class="dropdown-item" href="questao1.html">Questão 01</a>
-                      <a class="dropdown-item" href="questao2.html">Questão 02</a>
-                      <a class="dropdown-item" href="questao3.html">Questão 03</a>
-                      <a class="dropdown-item" href="questao4.html">Questão 04</a>
+                      <a style="color:#000000;" class="dropdown-item" href="questao1.html">Questão 01</a>
+                      <a style="color:#000000;"class="dropdown-item" href="questao2.html">Questão 02</a>
+                      <a style="color:#000000;"class="dropdown-item" href="questao3.html">Questão 03</a>
+                      <a style="color:#000000;"class="dropdown-item" href="questao4.html">Questão 04</a>
                     </div>
                   </li>
 
@@ -104,7 +122,66 @@
           </div>
       </div>
     </section>
+<br>
+<br>
+<br>
+    <form nome="calculoMedia" id="calculoMedia" method="post">
+      <form class="needs-validation" novalidate>
+        <div align="center" class="form-row">
+          <div class="col-md-12 mb-12">
+            <label style="color:#ffffff;" >Nome Aluno</label>
+            <input type="text" class="form-control" id="aluno" nome="aluno" value="" placeholder="Digite Seu Nome"  required>
+         
+              
+            </div>
+            <br>
+           
+              <div class="form-row">
+                <div class="col-md-12 mb-12">
+                  <label  style="color:#ffffff;" >Disciplina</label>
+                  <input type="text" class="form-control" id="disciplina" nome="disciplina" value="" placeholder="Digite sua Disciplina"  required>
+               
+                    
+                  </div>
+                </div>
+           
+          <div class="col-md-3 mb-3">
+           
+            <label   style="color:#ffffff;">Primeira Nota</label>
+            <input type="number" class="form-control" id="n1" nome="n1" value="" placeholder="Qual sua Primeira Nota"  required>
           
+            
+          </div>
+          <div class="col-md-3 mb-3">
+            <label  style="color:#ffffff;">Segunda Nota</label>
+            <input type="number" class="form-control" id="n1" nome="n1" value="" placeholder="Qual sua Segunda Nota"  required>
+            
+          </div>
+          
+          
+      
+          
+            <button align="center" style="color:#ffffff;" onclick="calculomedia()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+
+            <br>Media <input type ="media" id="media"    name="media"/><br>
+      <br>
+
+</form>
+<br><br>
+<p id="demo"></p>
+
+
+
+    
+
+         
+    
+          
+      
+
+          
+         
+      
            
             
             
@@ -112,38 +189,24 @@
         
     
             
-          <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <h6 class="border-bottom border-gray pb-2 mb-0">Dados</h6>
-                <strong class="d-block text-gray-dark">Aluno</strong>
-                Luiz Felipe Mendonça da Silva - Aluno UNILEÃO/NOITE
-             </div>
-    
-                
-          <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <h6 class="border-bottom border-gray pb-2 mb-0">Fale Comigo</h6>
-                <strong class="d-block text-gray-dark">E-mail</strong>
-                lf034570@gmail.com
-             </div>
-    
-             <div class="my-3 p-3 bg-white rounded shadow-sm">
-              <h6 class="border-bottom border-gray pb-2 mb-0">Detalhe Do Curso</h6>
-                  <strong class="d-block text-gray-dark">Curso Inscrito</strong>
-                  INF324-3 - ANÁLISE E DESENVOLVIMENTO DE SISTEMAS - 2020.1
-               </div>
+         
     
                <footer class="page-footer orange">
                 <div class="container">
                   <div class="row">
                     <div class="col l6 s12">
                       <h5 style="color:#daf8e3;" class="white-text">Desenvolvimento</h5>
-                      <p class="grey-text text-lighten-4">Esse Site Foi Desenvolvido para resolução de uma trabalho de desenvolvimento WEB - UNILEÃO.</p>
+                      <p class="grey-text text-lighten-4">Esse Site Foi Desenvolvido para resolução de uma trabalho de desenvolvimento WEB - UNILEÃO.
+
+                      </p>
             
             
                     </div>
                
                 <div class="col l3 s12">
-                  <h5 class="white-text">Créditos</h5>
+                  <h5 style="color:#daf8e3;">Créditos</h5>
                   <ul>
+                    <li><a class="white-text" href="https://github.com/luizfelipeoz/Trent">Code in GitHub</a></li>
                     <li><a class="white-text" href="https://pt.wikipedia.org/wiki/HTML">HTML</a></li>
                     <li><a class="white-text" href="https://pt.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></li>
                     <li><a class="white-text" href="https://pt.wikipedia.org/wiki/JavaScript">JAVASCRIPT</a></li>
