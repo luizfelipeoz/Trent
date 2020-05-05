@@ -84,7 +84,7 @@
     </script>
 
   </head>
-  <body style="background-color:	#000000">
+  <body>
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top d-none d-lg-block d-xl-block d-xl-none animated fadeIn fast" id="topNav">
 
@@ -175,59 +175,59 @@
       <br>
 
       <div class="starter-template">
-        <h1 style="color:#ffffff;">Questão - 03</h1>
-        <p style="color:#ffffff;" class="lead">Software para gerar CONTRA CHEQUE de um funcionário.<br> Software para ser utilizado no setor de Recursos Humanos de qualquer empresa.</p>
+        <h1>Questão - 03</h1>
+        <p >Software para gerar CONTRA CHEQUE de um funcionário.<br> Software para ser utilizado no setor de Recursos Humanos de qualquer empresa.</p>
       </div>
 
       
         <div class="row">
           <div class="col-6">
-            <h5 style="text-align: center; color:#ffffff;">PLANO CARGOS E CARREIRA</h5>
+            <h5 >PLANO CARGOS E CARREIRA</h5>
             <table class="table table-sm">
               <thead>
                 <tr>
-                  <th style="color:#ffffff;" scope="col">CARGO</th>
-                  <th style="color:#ffffff;"scope="col">AUMENTO (%)</th>
+                  <th>CARGO</th>
+                  <th scope="col">AUMENTO (%)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="color:#ffffff;">ATENDENTE</td>
-                  <td style="color:#ffffff;">8</td>
+                  <td>ATENDENTE</td>
+                  <td >8</td>
                 </tr>
                 <tr>
-                  <td style="color:#ffffff;">ESTOQUISTA</td>
-                  <td style="color:#ffffff;">6</td>
+                  <td >ESTOQUISTA</td>
+                  <td >6</td>
                 </tr>
                 <tr>
-                  <td style="color:#ffffff;">GERENTE</td>
-                  <td style="color:#ffffff;">3</td>
+                  <td >GERENTE</td>
+                  <td >3</td>
                 </tr>
               </tbody>
             </table>
           </div>
           
           <div class="col-6">
-            <h5 style="text-align: center;color:#ffffff;">CONTRIUBUIÇÃO INSS 2020</h5>
+            <h5 >CONTRIUBUIÇÃO INSS 2020</h5>
             <table class="table table-sm">  
               <thead>
                 <tr>
-                  <th style="color:#ffffff;" scope="col">SAlÁRIO BASE</th>
-                  <th style="color:#ffffff;"scope="col">ALIQUOTA INSS (%)</th>
+                  <th >SAlÁRIO BASE</th>
+                  <th ">ALIQUOTA INSS (%)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="color:#ffffff;">até R$ 1.045,00</td>
-                  <td style="color:#ffffff;">7,5</td>
+                  <td >até R$ 1.045,00</td>
+                  <td>7,5</td>
                 </tr>
                 <tr>
-                  <td style="color:#ffffff;">de R$ 1.045,01 até R$ 2.089,60</td>
-                  <td style="color:#ffffff;">9</td>
+                  <td >de R$ 1.045,01 até R$ 2.089,60</td>
+                  <td >9</td>
                 </tr>
                 <tr>
-                  <td style="color:#ffffff;">de R$ 2.089,61 até R$ 3.134,40</td>
-                  <td style="color:#ffffff;">12</td>
+                  <td >de R$ 2.089,61 até R$ 3.134,40</td>
+                  <td >12</td>
                 </tr>
               </tbody>
             </table>
@@ -239,24 +239,24 @@
           <form name="form_gerarcontracheque" id="form_gerarcontracheque">
             <div class="form-row">
               <div class="col">
-                <label style="color:#ffffff;">Funcionário</label>
+                <label >Funcionário</label>
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo do funcionário" required>
               </div>
             </div>
   
             <div class="form-row">
               <div class="col-md-6 mb-3">
-                <label style="color:#ffffff;">Cargo</label>
+                <label >Cargo</label>
                 <select class="custom-select" id="cargo" name="cargo" required>
-                  <option style="color:#ffffff;" selected disabled value="">Selecione um cargo...</option>
-                  <option style="color:#ffffff;" value="Atendente">Atendente</option>
-                  <option style="color:#ffffff;" value="Estoquista">Estoquista</option>
-                  <option style="color:#ffffff;" value="Gerente">Gerente</option>
+                  <option selected disabled value="">Selecione um cargo...</option>
+                  <option  value="Atendente">Atendente</option>
+                  <option  value="Estoquista">Estoquista</option>
+                  <option  value="Gerente">Gerente</option>
                 </select>
               </div>
   
               <div class="col-md-6 mb-3">
-                <label style="color:#ffffff;">Salário</label>
+                <label >Salário</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span style="color:#000000;" class="input-group-text" id="inputGroupPrepend2">R$</span>
@@ -266,7 +266,7 @@
               </div>
             </div>
   
-            <button style="color:#ffffff;" onclick="contracheque()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+            <button  onclick="contracheque()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
           </form>
         </div>
         <br><br>
@@ -274,63 +274,47 @@
   
       </main>
       </form>
-      
-      
+      <div class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+       <footer class="page-footer orange">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 style="color:#000;" class="white-text">Desenvolvimento</h5>
+              <p class="grey-text text-lighten-4">Esse Site Foi Desenvolvido para resolução de uma trabalho de desenvolvimento WEB - UNILEÃO.</p>
+    
+    
+            </div>
+       
+        <div class="col l3 s12">
+          <h5 class="white-text">Créditos</h5>
+          <ul>
+            <li><a class="white-text" href="https://pt.wikipedia.org/wiki/HTML">HTML</a></li>
+            <li><a class="white-text" href="https://pt.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></li>
+            <li><a class="white-text" href="https://pt.wikipedia.org/wiki/JavaScript">JAVASCRIPT</a></li>
            
-            
-            
-              
-        
-    
-            
-         
-    
-               <footer class="page-footer orange">
-                <div class="container">
-                  <div class="row">
-                    <div class="col l6 s12">
-                      <h5 style="color:#daf8e3;" class="white-text">Desenvolvimento</h5>
-                      <p class="grey-text text-lighten-4">Esse Site Foi Desenvolvido para resolução de uma trabalho de desenvolvimento WEB - UNILEÃO.
+          </ul>
+        </div>
+      </div>
+    </div>
+   
+    <div class="footer-copyright">
+      <div class="container">
+      Instagram do Desenvolvedor <a class="orange-text text-lighten-3" href="https://www.instagram.com/luizfelipeoz/">Visitar</a>
+      </div>
+    </div>
 
-                      </p>
-            
-            
-                    </div>
-               
-                <div class="col l3 s12">
-                  <h5 style="color:#daf8e3;">Créditos</h5>
-                  <ul>
-                    <li><a class="white-text" href="https://github.com/luizfelipeoz/Trent">Code in GitHub</a></li>
-                    <li><a class="white-text" href="https://pt.wikipedia.org/wiki/HTML">HTML</a></li>
-                    <li><a class="white-text" href="https://pt.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></li>
-                    <li><a class="white-text" href="https://pt.wikipedia.org/wiki/JavaScript">JAVASCRIPT</a></li>
-                   
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="footer-copyright">
-              <div class="container">
-              Instagram do Desenvolvedor <a class="orange-text text-lighten-3" href="https://www.instagram.com/luizfelipeoz/">Visitar</a>
-              </div>
-            </div>
-          </footer>
-          
-          
-            
-          
+    <div class="footer-copyright">
+      <div class="container">
+      Desenfolvido por Luiz Felipe Mendonça / UNILEÃO <a class="orange-text text-lighten-3" href="https://www.instagram.com/luizfelipeoz/">Saber Mais..</a>
+      </div>
+    </div>
+  </footer>
           
       
-            
-    
-
-
-
-
-  
-
- 
-
+      
      
    
     <!-- Optional JavaScript -->

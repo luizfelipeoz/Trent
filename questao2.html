@@ -9,34 +9,24 @@
 
     <link href="css/starter-template.css" rel="stylesheet">
 
+    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+
     
 
    
 
     
     <title>Trabalho Web</title>
-    <script type="text/javascript">
-
-      function media(){
-       var nota1 = parseFloat(document.getElementById("nota1").value);
-       var nota2 = parseFloat(document.getElementById("nota2").value);
-  
-       var media = (nota1 + nota2)/2 ;
-  
-       if(media >= 7)
-        if(media==10)
-         alert("Uau! Aprovado com distin��o");
-        else
-         alert("Parabens, aprovado! Media "+media);
-       else
-        alert("Reprovado!")
-  
-      }
-   </script>
+   <script>
+      
+ </script>
+    
     
 
   </head>
   <body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top d-none d-lg-block d-xl-block d-xl-none animated fadeIn fast" id="topNav">
 
@@ -127,40 +117,105 @@
     <main role="main" class="container">
       <br>
       <br>
-
       <div class="starter-template">
-        <h1>Questão - 01</h1>
-        <p >Software para Calcular Média<br> Software para ser utilizado em Escolas ou em  qualquer empresa.</p>
+        <h1>Questão - 02</h1>
+        <p >Software para GERAR BOLETO<br> Software para ser utilizado em  qualquer empresa que necessite gerar um Boleto.</p>
       </div>
+      <br>
+      <br>
+
+      <div class="row">
+        <div class="col-6">
+          <h5 >TABELA DE PRODUTOS/PREÇO</h5>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>PRODUTO</th>
+                <th scope="col">PREÇO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Smart TV LED 50" Samsung 50RU7100 Ultra HD 4K </td>
+                <td >R$ 2.000 </td>
+              </tr>
+              <tr>
+                <td >Samsung Galaxy A10</td>
+                <td >800</td>
+              </tr>
+              <tr>
+                <td >Relógio Feminino Casio Vintage Digital</td>
+                <td >100</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
     
+      <form name="form_gerarboleto" id="form_gerarboleto">
+        <div class="form-row">
+          <div class="col">
+            <label >Nome Cliente</label>
+            <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Nome completo do Cliente" required>
+          </div>
+        </div>
 
-   <div class="form-group">
-    <label for="formGroupExampleInput">Nome Aluno</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Digite Seu Nome">
-  </div>
- 
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Disciplina</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Qual Sua Disciplina">
-  </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label >Produtos</label>
+            <select class="custom-select" id="produto" name="produto" required>
+              <option selected disabled value="">Selecione Seu Produto...</option>
+              <option  value="Smart TV LED 50">Smart TV LED 50</option>
+              <option  value="Samsung Galaxy A10 ">Samsung Galaxy A10 </option>
+              <option  value="Relógio Feminino Casio Vintage Digital">Relógio Feminino Casio Vintage Digital</option>
+            </select>
+          </div>
 
-  
+      
 
-  <label>Primeira Nota</label>
-   <input id="nota1" type="number" min="1" max="10" > <br />
-   
-   <br>
-   <label>Segunda Nota</label>
-   <input id="nota2" type="number"  min="1" max="10"> <br />
-   <button onclick="media()">Calcular</button>
-   <br>
-   <br>
+      <table>
+        <tbody>
+        <tr>
+            <td><label>Total R$</label></td>
+            <td><input type="number" min="0" class="total" value="100" /></td>
+        </tr>
+        <tr name="condicao-pag" id="condicao-pag">
+            <td><label>Condição de pagamento:</label></td>
+            <td>
+                <select>
+                    <option value=0>À vista</option>
+                    <option value=1>À prazo</option>
+                    <option value=2>Outros</option>
+                </select>
+            </td>
+        </tr>
+        <tr id="parcelamento" style="display:none"> 
+            <td>Parcelar em</td>
+            <td>
+                <select id="n-parcelas">
+                    <option></option>
+                    <option value="2" selected>2x</option>
+                    <option value="3">3x</option>
+                    <option value="4">4x</option>
+                    <option value="5">5x</option>
+                    <option value="6">6x</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr id="parcelas" style="display:none">
+        
+          
+        </tr>
+        </tbody>
+        </table>
+        </main>
 
-    </main> 
-    
-    <div class="progress">
-      <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
+
+
+       
+        <div class="progress">
+          <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
        <footer class="page-footer orange">
         <div class="container">
           <div class="row">
@@ -199,7 +254,60 @@
       
       
      
-   
+  <script type="text/javascript">
+    //Funcao para atualizar as parcelas e seus valores
+function atualizaValores(){
+// pegando a quantidade de parcelas
+var valor=$("#n-parcelas").val();
+
+//variavel que recebe os inputs(HTML)
+var geraInputs="";
+
+//Calculando o valor de cada parcela
+var valorParcela=parseFloat($(".total").val()/valor).toFixed(2);
+
+//gerando os inputs com os valores de cada parcela
+for(var i=0; i<valor;i++){
+geraInputs+="<td> <input type='text' name='parcela[]' value='"+valorParcela+"'>  <input type='date' value=''></td>";
+}
+
+// inserindo as parcelas 
+$("#parcelas").html(geraInputs);
+}
+
+$(document).ready(function(e) {
+$(".total").on('change keyup keydown keypress',function(){
+// ao alterar o valor total, chama a funcao para alterar as parcelas
+atualizaValores();
+
+
+});
+$('#condicao-pag').on('change', 'select', function() {
+// ao alterar a condicao de pagamento,chama a funcao para alterar as parcelas
+atualizaValores();
+if($(this).val() == 1){
+  $('#parcelamento').show();
+  /*Calcular valor das parcelas (2x, 3x, 4x) e preencher inputs*/
+  $('#parcelas').show();
+}
+else{
+  $('#parcelamento').hide();
+  $('#parcelas').hide();
+  $("input[name='parcela[]']").val('');
+}
+})
+  
+$('#n-parcelas').on('change', function() {
+/*Calcular valor das parcelas (2x, 3x, 4x) e preencher inputs*/
+//Ao alterar a quantidade e parcelas chama a funcao para alterar as parcelas
+atualizaValores();
+});
+
+
+
+});
+
+</script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
