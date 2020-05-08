@@ -12,6 +12,7 @@
 
     <script type="text/javascript">
       function calcula_imc(){
+        var nome =  document.getElementById("nome").value);
       var altura = document.imcForm.altura.value;
       var peso = document.imcForm.peso.value;
       
@@ -20,7 +21,7 @@
       var calculo = (peso/quadrado);
       
       if(calculo<18.5){
-      alert("Você está magro com esse indice: " + calculo);
+      alert("Olá "+nome+ "Você está Com Baixo Peso, ou seja, peso muito baixo para altura, isso tem maior probabilidade para anorexia! " + calculo);
       }
       else if(calculo>=18.5 && calculo<24.9){
       alert("Você está normal com esse indice: " + calculo);
@@ -148,6 +149,11 @@
         
 
         <form name="imcForm" id="imcForm" action="#">
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Nome do Paciente</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite Seu Nome">
+          </div>
 
           <p>
           Altura<br />
