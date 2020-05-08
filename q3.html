@@ -1,0 +1,328 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="css/starter-template.css" rel="stylesheet">
+    <link rel="icon" href="css/icon.png">
+
+
+    
+
+   
+
+    
+    <title>Trabalho Web</title>
+    <script type="text/javascript">
+      function contracheque(){
+        var nome    =  form_gerarcontracheque.nome.value;
+        var cargo   =  form_gerarcontracheque.cargo.value;
+        var salario =  form_gerarcontracheque.salario.value;
+
+        var novo_sal = "CARGO NÃO POSSUI REAJUSTE DE SALÁRIO";
+
+        
+
+        //salario = parseFloat(salario);
+
+
+        if (cargo == "Atendente") {
+          var aumento  = (parseFloat(salario) * 0.08);
+          var novo_sal  = (parseFloat(salario) + parseFloat(aumento));
+          var perc_aum = " (+ 8%)";
+        }
+        else if (cargo == "Estoquista") {
+          var aumento = (parseFloat(salario) * 0.06);
+          var novo_sal  = (parseFloat(salario) + parseFloat(aumento));
+          var perc_aum = " (+ 6%)";
+        } 
+        else if (cargo == "Gerente") {
+          var aumento = (parseFloat(salario) * 0.03);
+          var novo_sal  = (parseFloat(salario) + parseFloat(aumento));
+          var perc_aum = " (+ 3%)";
+        }
+        else {
+          var aumento = "CARGO SEM AUMENTO NO MOMENTO.";
+        }
+
+
+        if (novo_sal <= 1045) {
+          var inss  = (parseFloat(novo_sal) * 0.075);
+          var sal_liq = parseFloat(novo_sal) - parseFloat(inss);
+          var perc_inss = " (- 7,5%)";
+        }
+        else if ((novo_sal > 1045) && (novo_sal <= 2089.6)) {
+          var inss  = (parseFloat(novo_sal) * 0.09);
+          var sal_liq = parseFloat(novo_sal) - parseFloat(inss);
+          var perc_inss = " (- 9%)";
+        }
+        else if ((novo_sal > 2089.6) && (novo_sal <= 3134.4)) {
+          var inss  = (parseFloat(novo_sal) * 0.12);
+          var sal_liq = parseFloat(novo_sal) - parseFloat(inss);
+          var perc_inss = " (- 12%)";
+        }
+        else {
+          var inss  = (parseFloat(novo_sal) * 0.14);
+          var sal_liq = parseFloat(novo_sal) - parseFloat(inss);
+          var perc_inss = " (- 14%)";
+        }
+
+        document.getElementById("demo").innerHTML = 
+        " ---------------------------------------------- <b>CONTRA CHEQUE</b> ----------------------------------------------"+
+        "<br ><b>FUNCIONÁRIO:</b> "+nome.toUpperCase()+
+        "<br><b>CARGO:</b> "+cargo.toUpperCase()+
+        "<br><b>SALÁRIO ATUAL:</b> "+parseFloat(salario).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+        "<br><b>AUMENTO SALARIAL:</b> " +aumento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+perc_aum+
+        "<br><b>NOVO SALÁRIO:</b> "+novo_sal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+        "<br><b>DESC. INSS:</b> "+inss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+perc_inss+
+        "<br><b>SALÁRIO LIQ.:</b> "+sal_liq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+        "<br>------------------------------------------------------------------------------------------------------------------"
+
+      }
+    </script>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top d-none d-lg-block d-xl-block d-xl-none animated fadeIn fast" id="topNav">
+
+      <div class="container">
+
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+
+              <ul class="navbar-nav ml-auto">
+
+                  <li class="nav-item">
+                      
+                      <!--<a class="nav-link js-scroll-trigger tagueamento" href="http://portal.unileao.edu.br/Corpore.Net/Login.aspx">Portal Educacional</a>-->
+
+                      <a style="color:#ffffff;" class="nav-link js-scroll-trigger tagueamento" href="index.html">Inicio</a>
+
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a style="color:#ffffff;" class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Questões</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <a style="color:#000000;" class="dropdown-item" href="q1.html">Questão 01</a>
+                      <a style="color:#000000;"class="dropdown-item" href="q2.html">Questão 02</a>
+                      <a style="color:#000000;"class="dropdown-item" href="q3.html">Questão 03</a>
+                      <a style="color:#000000;"class="dropdown-item" href="q4.html">Questão 04</a>
+                    </div>
+                  </li>
+
+                  <li class="nav-item">
+
+                    <a style="color:#ffffff;" class="nav-link js-scroll-trigger tagueamento_final" href="https://www.instagram.com/luizfelipeoz/" target="_blank">Instagram</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a style="color:#ffffff;" class="nav-link js-scroll-trigger tagueamento_final" href="https://www.facebook.com/luizfelipe.mendonca.56" target="_blank">Facebook</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a style="color:#ffffff;" class="nav-link js-scroll-trigger tagueamento_final" href="https://api.whatsapp.com/send?phone=5588999011428&text=Ol%C3%A1%2C%20Estou%20aqui%20atrav%C3%A9s%20do%20Site" target="_blank" >WhatsApp</a>
+
+                </li>
+
+                
+
+                <li class="nav-item">
+
+                    <a style="color:#ffffff;" class="nav-link js-scroll-trigger tagueamento_final" href="https://www.youtube.com/watch?v=V622PNUjqy4&t=3s" target="_blank" >YouTube</a>
+
+                </li>
+
+            </ul>
+
+       
+          </div>
+        </div>
+      
+     </nav>
+
+
+    <section id="banner-destaque2" class="animated fadeIn fast lazy d-flex" style="background-image: url('https://unileao.edu.br/wp-content/themes/portalv2.0/img/visite-infra.jpg')">
+      <div class="container my-auto">
+          <div class="row">
+              <div data-wow-delay=".25s" class="col-lg-4 d-flex align-items-center wow animated fadeInLeft">
+                  <div class="informacao">
+                      <h1 style="color:#ffffff;">UNILEÃO</h1>
+                      <hr/>
+                      <BR>
+                        <BR>
+                          <BR>
+                            <BR>
+                      
+                      
+                      <li class="nav-item">
+                  
+                        <a ALIGN='CENTER' style="color:#ffffff;" class="nav-link js-scroll-trigger tagueamento_final" href="https://unileao.edu.br" target="_blank" >VISITAR UNILEÃO</a>
+  
+                    </li>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+   
+      <br>
+      <br>
+
+      <div  class="starter-template">
+        <h1>Questão - 03</h1>
+        <p >Software para gerar CONTRA CHEQUE de um funcionário.<br> Software para ser utilizado no setor de Recursos Humanos de qualquer empresa.</p>
+      </div>
+
+      
+        <div class="row">
+          <div class="col-6">
+            <h5 >PLANO CARGOS E CARREIRA</h5>
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>CARGO</th>
+                  <th scope="col">AUMENTO (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ATENDENTE</td>
+                  <td >8</td>
+                </tr>
+                <tr>
+                  <td >ESTOQUISTA</td>
+                  <td >6</td>
+                </tr>
+                <tr>
+                  <td >GERENTE</td>
+                  <td >3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="col-6">
+            <h5 >CONTRIUBUIÇÃO INSS 2020</h5>
+            <table class="table table-sm">  
+              <thead>
+                <tr>
+                  <th >SAlÁRIO BASE</th>
+                  <th ">ALIQUOTA INSS (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td >até R$ 1.045,00</td>
+                  <td>7,5</td>
+                </tr>
+                <tr>
+                  <td >de R$ 1.045,01 até R$ 2.089,60</td>
+                  <td >9</td>
+                </tr>
+                <tr>
+                  <td >de R$ 2.089,61 até R$ 3.134,40</td>
+                  <td >12</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <hr>
+  
+        <div>
+          <form name="form_gerarcontracheque" id="form_gerarcontracheque">
+            <div class="form-row">
+              <div class="col">
+                <label >Funcionário</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo do funcionário" required>
+              </div>
+            </div>
+  
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label >Cargo</label>
+                <select class="custom-select" id="cargo" name="cargo" required>
+                  <option selected disabled value="">Selecione um cargo...</option>
+                  <option  value="Atendente">Atendente</option>
+                  <option  value="Estoquista">Estoquista</option>
+                  <option  value="Gerente">Gerente</option>
+                </select>
+              </div>
+  
+              <div class="col-md-6 mb-3">
+                <label >Salário</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span style="color:#000000;" class="input-group-text" id="inputGroupPrepend2">R$</span>
+                  </div>
+                  <input type="text" class="form-control" id="salario" name="salario" required>
+                </div>
+              </div>
+            </div>
+  
+            <button  onclick="contracheque()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+          </form>
+        </div>
+        <br><br>
+        <p id="demo"></p>
+  
+     
+      </form>
+      <div class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+       <footer class="page-footer orange">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 style="color:#000;" class="white-text">Desenvolvimento</h5>
+              <p class="grey-text text-lighten-4">Esse Site Foi Desenvolvido para resolução de uma trabalho de desenvolvimento WEB - UNILEÃO.</p>
+    
+    
+            </div>
+       
+        <div class="col l3 s12">
+          <h5 class="white-text">Créditos</h5>
+          <ul>
+            <li><a class="white-text" href="https://pt.wikipedia.org/wiki/HTML">HTML</a></li>
+            <li><a class="white-text" href="https://pt.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a></li>
+            <li><a class="white-text" href="https://pt.wikipedia.org/wiki/JavaScript">JAVASCRIPT</a></li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+   
+    <div class="footer-copyright">
+      <div class="container">
+      Instagram do Desenvolvedor <a class="orange-text text-lighten-3" href="https://www.instagram.com/luizfelipeoz/">Visitar</a>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+      Desenfolvido por Luiz Felipe Mendonça / UNILEÃO <a class="orange-text text-lighten-3" href="https://www.instagram.com/luizfelipeoz/">Saber Mais..</a>
+      </div>
+    </div>
+  </footer>
+          
+      
+      
+     
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
